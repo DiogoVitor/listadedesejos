@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.Sobre"
+             Title="Sobre">
+  <ContentPage.Content>
+    <ScrollView>
+      <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Sobre o Aplicativo" 
+               FontSize="Large"
+               HorizontalOptions="Center" />
+        
+        <Label Text="Bem-vindo ao Aplicativo de Lista de Desejos!"
+               FontSize="Medium"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este aplicativo permite que você crie e organize suas listas de desejos de forma prática e eficiente. Desenvolvido com o objetivo de facilitar o acompanhamento dos seus desejos, metas e planos." 
+               FontSize="Small"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Desenvolvido por: Diogo, Igor e Matheus"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Versão: 1.0.0"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Contato:"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Button Text="Enviar E-mail" 
+                HorizontalOptions="Center"
+                Clicked="OnEmailButtonClicked" />
+
+        <Button Text="Visite nosso site" 
+                HorizontalOptions="Center"
+                Clicked="OnWebsiteButtonClicked" />
+        
+      </VerticalStackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.Perfil"
+             Title="Perfil">
+    
+    <StackLayout Padding="20" Spacing="20">
+        <!-- Imagem de Perfil -->
+        <Image Source="perfil.png"
+               HeightRequest="150"
+               WidthRequest="150"
+               HorizontalOptions="Center" />
+
+        <!-- Nome do Usuário -->
+        <Label Text="Diogo Vitor"
+               FontSize="Large"
+               HorizontalOptions="Center" />
+
+        <!-- Informações de Contato -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Email: " FontAttributes="Bold" />
+            <Label Text="diogovitorvg@gmail.com" />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Senha: " FontAttributes="Bold" />
+            <Label Text="*******" />
+        </StackLayout>
+
+        <!-- Botões de Ação -->
+        <Button Text="Editar Perfil" HorizontalOptions="FillAndExpand" />
+        <Button Text="Sair" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+    
+</ContentPage>

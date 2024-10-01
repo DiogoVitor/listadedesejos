@@ -1,0 +1,59 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.Cadastro"
+             Title="Cadastro">
+
+    <StackLayout Padding="20" Spacing="15">
+
+        <!-- Título da Página -->
+        <Label Text="Cadastro de Usuário" 
+               FontSize="Large" 
+               HorizontalOptions="Center" />
+
+        <!-- Nome -->
+        <Entry x:Name="NameEntry" 
+               Placeholder="Nome Completo" />
+
+        <!-- Email -->
+        <Entry x:Name="EmailEntry" 
+               Placeholder="Email"
+               Keyboard="Email" />
+
+        <!-- Senha -->
+        <Entry x:Name="PasswordEntry" 
+               Placeholder="Senha" 
+               IsPassword="True" />
+        
+        <!-- Sexo -->
+        <Entry x:Name="SexoEntry" 
+               Placeholder="Sexo" />
+        
+        <!-- Estado -->
+        <Entry x:Name="EstadoEntry" 
+               Placeholder="Estado" 
+               Keyboard="Estado" />
+        
+        <!-- Cidade -->
+        <Entry x:Name="CidadeEntry" 
+               Placeholder="Cidade" />
+
+        <!-- Telefone -->
+        <Entry x:Name="PhoneEntry" 
+               Placeholder="Telefone" />
+
+        <!-- Botão de Cadastro -->
+        <Button Text="Cadastrar" 
+                Clicked="OnRegisterClicked" 
+                BackgroundColor="Green" 
+                TextColor="White" />
+
+        <!-- Label de Sucesso ou Erro -->
+        <Label x:Name="ResultLabel"
+               FontSize="Medium"
+               TextColor="Red"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+               
+    </StackLayout>
+
+</ContentPage>

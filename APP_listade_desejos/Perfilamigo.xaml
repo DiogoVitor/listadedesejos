@@ -1,0 +1,24 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.PerfilPage"
+             xmlns:local="clr-namespace:APP_listade_desejos"
+             Title="Perfil">
+
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Exibe a imagem do amigo -->
+        <Image Source="perfil.png"
+               HeightRequest="150"
+               WidthRequest="150"
+               HorizontalOptions="Center" />
+
+        <!-- Exibe o nome do amigo -->
+        <Label Text="{Binding Nome}" 
+               FontSize="Large" 
+               HorizontalOptions="Center" />
+
+        <!-- Mais informações sobre o amigo podem ser adicionadas aqui -->
+        <Label Text="Olá seja bem vindo ao meu perfil" />
+
+    </StackLayout>
+
+</ContentPage>

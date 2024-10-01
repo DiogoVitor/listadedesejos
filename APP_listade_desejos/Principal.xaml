@@ -1,0 +1,47 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.Principal"
+             
+             Title="Lista de Desejos">
+    
+    
+
+    <StackLayout Padding="10">
+
+        <!-- Título -->
+        <Label Text="Minha Lista de Desejos" 
+               FontSize="Large"
+               HorizontalOptions="Center" />
+
+        <!-- Entry para novo item -->
+        <Entry x:Name="wishEntry" 
+               Placeholder="Digite um novo item" />
+
+        <!-- Botão para adicionar item -->
+        <Button Text="Adicionar à Lista" 
+                Clicked="OnAddItemClicked" />
+
+        <!-- Botão para remover todos os itens -->
+        <Button Text="Remover Tudo"
+                BackgroundColor="Red"
+                TextColor="White"
+                Clicked="OnRemoveAllClicked" />
+
+        <!-- Lista de desejos -->
+        <CollectionView x:Name="wishListView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding Name}" VerticalOptions="Center" />
+                        <Button Text="Remover" 
+                                CommandParameter="{Binding .}"
+                                Clicked="OnRemoveItemClicked"
+                                HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:APP_listade_desejos"
+            x:Class="APP_listade_desejos.MainFlyoutPage">
+    
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="10">
+                <Label Text="Navegação" FontSize="Large" />
+
+                <!-- Lista de opções do menu -->
+                <ListView x:Name="MenuItemsListView" ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Title}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type local:MenuItemModel}">
+                            <local:MenuItemModel Title="Pagina Inicial" TargetType="{x:Type local:Principal}" />
+                            <local:MenuItemModel Title="Amigos" TargetType="{x:Type local:AmigosPage}" />
+                            <local:MenuItemModel Title="Perfil" TargetType="{x:Type local:Perfil}" />
+                            <local:MenuItemModel Title="Login" TargetType="{x:Type local:Login}" />
+                            <local:MenuItemModel Title="Cadastro" TargetType="{x:Type local:Cadastro}" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <!-- Página principal -->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Principal />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+    
+</FlyoutPage>

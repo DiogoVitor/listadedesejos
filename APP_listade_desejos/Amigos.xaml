@@ -1,0 +1,60 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.AmigosPage"
+             Title="Meus Amigos">
+
+    <StackLayout Padding="20" Spacing="10">
+
+        <!-- Barra de Busca -->
+        <SearchBar x:Name="searchBar"
+                   Placeholder="Buscar amigos"
+                   SearchCommand="{Binding Source={x:Reference searchBar}, Path=Text}"
+                   TextChanged="OnSearchBarTextChanged"/>
+
+        <!-- Botão para Adicionar Amigo -->
+        <Button Text="Adicionar Amigo"
+                BackgroundColor="Green"
+                TextColor="White"
+                Clicked="OnAddAmigoClicked" />
+
+        <!-- Lista de Amigos -->
+        <CollectionView x:Name="amigosListView" ItemsSource="{Binding Amigos}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+
+                        <!-- Nome do Amigo com Evento de Toque -->
+                        <Label Text="{Binding Nome}"
+                               FontSize="Medium"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Tapped="OnAmigoTapped" 
+                                    CommandParameter="{Binding .}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <!-- Botão para Remover -->
+                        <Button Text="Remover"
+                                CommandParameter="{Binding .}"
+                                Clicked="OnRemoveAmigoClicked"
+                                BackgroundColor="Red"
+                                TextColor="White" />
+
+                        <!-- Botão para Bloquear -->
+                        <Button Text="Bloquear"
+                                CommandParameter="{Binding .}"
+                                Clicked="OnBlockAmigoClicked"
+                                BackgroundColor="Gray"
+                                TextColor="White" />
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_listade_desejos.Login"
+             Title="Login">
+
+    <StackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+
+        <!-- Título da Página -->
+        <Label Text="Bem-vindo!" 
+               FontSize="Large" 
+               HorizontalOptions="Center" />
+
+        <!-- Email -->
+        <Entry x:Name="emailEntry" 
+               Placeholder="Email"
+               Keyboard="Email" />
+
+        <!-- Senha -->
+        <Entry x:Name="passwordEntry" 
+               Placeholder="Senha" 
+               IsPassword="True" />
+
+        <!-- Esqueceu a Senha -->
+        <Button Text="Esqueceu a Senha?" 
+                Clicked="OnForgotPasswordClicked" 
+                HorizontalOptions="End" 
+                TextColor="Blue"
+                BackgroundColor="Transparent" />
+
+        <!-- Botão Logar -->
+        <Button Text="Logar" 
+                Clicked="OnLoginClicked" 
+                BackgroundColor="Green" 
+                TextColor="White" />
+
+        <!-- Botão Criar Conta -->
+        <Button Text="Criar Conta"
+                Clicked="OnCreateAccountClicked" 
+                BackgroundColor="Blue" 
+                TextColor="White" />
+
+        <!-- Label de Resultado -->
+        <Label x:Name="resultLabel"
+               FontSize="Medium"
+               TextColor="Red"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+    </StackLayout>
+
+</ContentPage>
